@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(407, 298);
             this.Name = "MainActivity";
-            this.Text = "MainActivity";
+            this.Text = "Hardware Fetcher";
             this.ResumeLayout(false);
 
         }
