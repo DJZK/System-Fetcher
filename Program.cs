@@ -37,6 +37,10 @@ namespace System_Fetcher
             GetHardwareInfo("Win32_OperatingSystem", "BuildNumber");
             Console.WriteLine("\nNetwork Adapter Information:");
             GetHardwareInfo("Win32_NetworkAdapter", "Name");
+            Console.WriteLine("\nSecure Boot Status:"); 
+            GetSecureBootStatus();
+            Console.WriteLine("\nTPM Version:"); 
+            GetTpmVersion();
             // App Launch
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -52,5 +56,34 @@ namespace System_Fetcher
             }
         }
 
+        static void GetTpmVersion()
+        {
+            try 
+            { 
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMv2\\Security\\MicrosoftTpm", "SELECT * FROM Win32_Tpm"); 
+                foreach (ManagementObject obj in searcher.Get()) { Console.WriteLine("TPM Version: " + obj["SpecVersion"]); 
+                } 
+            } 
+            catch (Exception ex) 
+            { 
+                Console.WriteLine("Error fetching TPM information: " + ex.Message); 
+            }
+        }
+        static void GetSecureBootStatus() 
+        {
+            try 
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMv2\\Security\\MicrosoftTpm", "SELECT * FROM Win32_SecureBoot"); 
+                foreach (ManagementObject obj in searcher.Get()) 
+                { 
+                    var secureBootEnabled = obj["SecureBootEnabled"]; 
+                    Console.WriteLine(secureBootEnabled != null && (bool)secureBootEnabled ? "Secure Boot is enabled." : "Secure Boot is disabled."); 
+                } 
+            } 
+            catch (Exception ex) 
+            { 
+                Console.WriteLine("Error fetching Secure Boot status: " + ex.Message); 
+            } 
+        }
     }
 }
