@@ -66,14 +66,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Functions\Initialize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Functions\Initialize.Designer.cs">
+      <DependentUpon>Initialize.cs</DependentUpon>
+    </Compile>
     <Compile Include="Functions\MainActivity.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Functions\MainActivity.Designer.cs">
       <DependentUpon>MainActivity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Fetchers.cs" />
+    <Compile Include="Interfaces\SystemInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Functions\Initialize.resx">
+      <DependentUpon>Initialize.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Functions\MainActivity.resx">
       <DependentUpon>MainActivity.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,9 +111,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
