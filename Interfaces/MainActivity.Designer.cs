@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(407, 298);
             this.Name = "MainActivity";
             this.Text = "Hardware Fetcher";
+            this.Load += new System.EventHandler(this.MainActivity_Load);
             this.ResumeLayout(false);
 
         }

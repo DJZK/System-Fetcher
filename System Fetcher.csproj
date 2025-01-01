@@ -51,6 +51,9 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>System_Fetcher.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -66,26 +69,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Functions\Initialize.cs">
+    <Compile Include="Functions\GlobalVariables.cs" />
+    <Compile Include="Functions\Handles.cs" />
+    <Compile Include="Interfaces\Initialize.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Functions\Initialize.Designer.cs">
+    <Compile Include="Interfaces\Initialize.Designer.cs">
       <DependentUpon>Initialize.cs</DependentUpon>
     </Compile>
-    <Compile Include="Functions\MainActivity.cs">
+    <Compile Include="Interfaces\MainActivity.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Functions\MainActivity.Designer.cs">
+    <Compile Include="Interfaces\MainActivity.Designer.cs">
       <DependentUpon>MainActivity.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Fetchers.cs" />
-    <Compile Include="Interfaces\SystemInfo.cs" />
+    <Compile Include="Functions\Fetchers.cs" />
+    <Compile Include="Functions\SystemInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Functions\Initialize.resx">
+    <EmbeddedResource Include="Interfaces\Initialize.resx">
       <DependentUpon>Initialize.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Functions\MainActivity.resx">
+    <EmbeddedResource Include="Interfaces\MainActivity.resx">
       <DependentUpon>MainActivity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -96,6 +101,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">

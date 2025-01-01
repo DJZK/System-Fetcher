@@ -16,5 +16,10 @@ namespace System_Fetcher.Functions
         {
             InitializeComponent();
         }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+        }
     }
 }
