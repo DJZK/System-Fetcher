@@ -52,8 +52,33 @@ namespace System_Fetcher.Functions
 
         private void buttonView_Click(object sender, EventArgs e)
         {
+            // Loads manual inputs to the bitch ass sysinfo
+            LockandLoad();
+
+            // Builds it to the system info
+            Fetchers.BuildInfo();
+
             Viewer vw = new Viewer();
             vw.ShowDialog();
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            // Loads manual inputs to the bitch ass sysinfo
+            LockandLoad();
+
+            // Builds it to the system info
+            Fetchers.BuildInfo();
+        }
+
+        private void LockandLoad()
+        {
+            GlobalVariables.sysInfo.PSU = textPSU.Text;
+            GlobalVariables.sysInfo.FAN = textCPU.Text;
+            GlobalVariables.sysInfo.CHASSIS = textChassy.Text;
+            GlobalVariables.sysInfo.AT = textAT.Text;
+            GlobalVariables.sysInfo.OWNER = textOwner.Text;
+
         }
     }
 }

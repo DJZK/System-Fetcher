@@ -33,13 +33,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textPSU = new System.Windows.Forms.TextBox();
+            this.textCPU = new System.Windows.Forms.TextBox();
+            this.textChassy = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textAT = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textOwner = new System.Windows.Forms.TextBox();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonView = new System.Windows.Forms.Button();
             this.labelVerison = new System.Windows.Forms.Label();
@@ -83,26 +83,26 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Chassis (and Fans):";
             // 
-            // textBox1
+            // textPSU
             // 
-            this.textBox1.Location = new System.Drawing.Point(117, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(144, 20);
-            this.textBox1.TabIndex = 4;
+            this.textPSU.Location = new System.Drawing.Point(117, 45);
+            this.textPSU.Name = "textPSU";
+            this.textPSU.Size = new System.Drawing.Size(157, 20);
+            this.textPSU.TabIndex = 4;
             // 
-            // textBox2
+            // textCPU
             // 
-            this.textBox2.Location = new System.Drawing.Point(117, 71);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(144, 20);
-            this.textBox2.TabIndex = 5;
+            this.textCPU.Location = new System.Drawing.Point(117, 71);
+            this.textCPU.Name = "textCPU";
+            this.textCPU.Size = new System.Drawing.Size(157, 20);
+            this.textCPU.TabIndex = 5;
             // 
-            // textBox3
+            // textChassy
             // 
-            this.textBox3.Location = new System.Drawing.Point(117, 97);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(144, 20);
-            this.textBox3.TabIndex = 6;
+            this.textChassy.Location = new System.Drawing.Point(117, 97);
+            this.textChassy.Name = "textChassy";
+            this.textChassy.Size = new System.Drawing.Size(157, 20);
+            this.textChassy.TabIndex = 6;
             // 
             // label5
             // 
@@ -114,13 +114,13 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Actions Taken:";
             // 
-            // textBox4
+            // textAT
             // 
-            this.textBox4.Location = new System.Drawing.Point(117, 132);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(144, 45);
-            this.textBox4.TabIndex = 9;
+            this.textAT.Location = new System.Drawing.Point(117, 132);
+            this.textAT.Multiline = true;
+            this.textAT.Name = "textAT";
+            this.textAT.Size = new System.Drawing.Size(157, 45);
+            this.textAT.TabIndex = 9;
             // 
             // label6
             // 
@@ -132,12 +132,12 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Owner:";
             // 
-            // textBox5
+            // textOwner
             // 
-            this.textBox5.Location = new System.Drawing.Point(117, 190);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(144, 20);
-            this.textBox5.TabIndex = 11;
+            this.textOwner.Location = new System.Drawing.Point(117, 190);
+            this.textOwner.Name = "textOwner";
+            this.textOwner.Size = new System.Drawing.Size(157, 20);
+            this.textOwner.TabIndex = 11;
             // 
             // buttonSave
             // 
@@ -147,6 +147,7 @@
             this.buttonSave.TabIndex = 12;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonView
             // 
@@ -192,13 +193,13 @@
             this.Controls.Add(this.labelVerison);
             this.Controls.Add(this.buttonView);
             this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textOwner);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textAT);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textChassy);
+            this.Controls.Add(this.textCPU);
+            this.Controls.Add(this.textPSU);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -221,13 +222,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textPSU;
+        private System.Windows.Forms.TextBox textCPU;
+        private System.Windows.Forms.TextBox textChassy;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textAT;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textOwner;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonView;
         private System.Windows.Forms.Label labelVerison;

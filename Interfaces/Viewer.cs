@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System_Fetcher.Functions;
 
 namespace System_Fetcher.Interfaces
 {
@@ -15,6 +16,20 @@ namespace System_Fetcher.Interfaces
         public Viewer()
         {
             InitializeComponent();
+        }
+
+        private void Viewer_Load(object sender, EventArgs e)
+        {
+            textInfo.Width = Width - 15;
+            textInfo.Height = Height - 70;
+           
+            textInfo.Text = GlobalVariables.SystemInfo;
+        }
+
+        private void Viewer_SizeChanged(object sender, EventArgs e)
+        {
+            textInfo.Width = Width - 15;
+            textInfo.Height = Height - 70;
         }
     }
 }

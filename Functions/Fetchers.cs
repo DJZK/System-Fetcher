@@ -1,5 +1,4 @@
-﻿using SharpDX.DXGI;
-using SharpDX.Direct3D;
+﻿
 using System;
 using System.Management;
 using System.Windows.Forms;
@@ -15,28 +14,6 @@ namespace System_Fetcher.Interfaces
     internal class Fetchers
     {
         private static string macaddressonly = "";
-    /* Test case
-          Console.WriteLine("\nRAM Capacity:");
-          
-          Console.WriteLine("\nSSD Information:");
-          GetHardwareInfo("Win32_DiskDrive", "Model");
-         v
-          Console.WriteLine("\nBIOS Serial Number:");
-          GetHardwareInfo("Win32_BIOS", "SerialNumber");
-          Console.WriteLine("\nMotherboard Information:");
-          GetHardwareInfo("Win32_BaseBoard", "Manufacturer");
-          GetHardwareInfo("Win32_BaseBoard", "Product");
-          Console.WriteLine("\nOS Version and Build:");
-          GetHardwareInfo("Win32_OperatingSystem", "Version");
-          GetHardwareInfo("Win32_OperatingSystem", "BuildNumber");
-          Console.WriteLine("\nNetwork Adapter Information:");
-          GetHardwareInfo("Win32_NetworkAdapter", "Name");
-          Console.WriteLine("\nSecure Boot Status:");
-          GetSecureBootStatus();
-          Console.WriteLine("\nTPM Version:");
-          GetTpmVersion();
-          */
-    
         public static void FetchSystem()
         {
             // Begin, descend
@@ -107,7 +84,6 @@ namespace System_Fetcher.Interfaces
         {
             try
             {
-                string result = "";
                 ulong totalMemoryBytes = 0;
 
                 // Querying the Win32_PhysicalMemory class
@@ -487,7 +463,7 @@ namespace System_Fetcher.Interfaces
             }
         }
 
-        private static void BuildInfo()
+        public static void BuildInfo()
         {
             GlobalVariables.SystemInfo =
                 $"Time: {DateTime.Now} \n\n" +
@@ -504,7 +480,7 @@ namespace System_Fetcher.Interfaces
                 $"PSU: {GlobalVariables.sysInfo.PSU} \n\t" +
                 $"FAN: {GlobalVariables.sysInfo.FAN} \n\t" +
                 $"MOBO: {GlobalVariables.sysInfo.MOBO} \n\t" +
-                $"CASE: {GlobalVariables.sysInfo.CHASSIS} \n\t " +
+                $"CASE: {GlobalVariables.sysInfo.CHASSIS} \n\t" +
                 $"NET: {GlobalVariables.sysInfo.NET} \n\n" +
 
                 $"Software:\n\t" +
