@@ -59,9 +59,7 @@ namespace System_Fetcher.Functions
                     else
                     {
                         // Successfully read and validated configuration
-                        // TODO
-                        MessageBox.Show($"Handler: {configData["Handler"]}\nCompany: {configData["Company"]}\nAppVer: {configData["AppVer"]}",
-                                        "Configuration Loaded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // MessageBox.Show($"Handler: {configData["Handler"]}\nCompany: {configData["Company"]}\nAppVer: {configData["AppVer"]}","Configuration Loaded", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -150,5 +148,41 @@ namespace System_Fetcher.Functions
 
             return configData;
         }
+
+        public static bool SaveConfig(string Name, string company)
+        {
+            try
+            {
+                // ALIGN!
+                string configContent = $"Handler = {Name.Trim()}\n" +
+                                         $"Company = {company.Trim()}\n" +
+                                         $"AppVer = {Properties.Resources.appVersion.Trim()}";
+
+                // GO!!!!!
+                File.WriteAllText(GlobalVariables.configPath, configContent);
+                return true;
+            }
+            catch (IOException ioEx)
+            {
+                MessageBox.Show($"File system error: {ioEx.Message}",
+                                "File Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            catch (UnauthorizedAccessException uaEx)
+            {
+                MessageBox.Show($"Access denied: {uaEx.Message}",
+                                "Permission Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An unexpected error occurred: {ex.Message}",
+                                "Unexpected Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+        }
     }
+
+
 }

@@ -19,7 +19,25 @@ namespace System_Fetcher.Functions
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            if (string.IsNullOrWhiteSpace(textName.Text) || string.IsNullOrWhiteSpace(textOrg.Text))
+            {
+                MessageBox.Show("Please fill in both fields.",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (Handles.SaveConfig(textName.Text, textOrg.Text))
+                {
+                    DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong",
+                               "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    DialogResult = DialogResult.Cancel;
+                }
+                
+            }
         }
     }
 }
