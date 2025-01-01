@@ -178,5 +178,55 @@ namespace System_Fetcher.Functions
             }
 
         }
+
+        public static void SaveSystemInfo(string content)
+        {
+            try
+            {
+                // Get the current date, month, and time
+                string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
+                string currentMonth = DateTime.Now.ToString("MMMM");
+                string currentDay = DateTime.Now.ToString("dd"); // Day of the month
+                string currentTime = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+
+                // Get the path of the executable's directory
+                string executableDirectory = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+
+                // Set the base output directory inside the executable's directory
+                string outputDirectory = Path.Combine(executableDirectory, "Output");
+
+                // Create Output directory if it doesn't exist
+                if (!Directory.Exists(outputDirectory))
+                {
+                    Directory.CreateDirectory(outputDirectory);
+                }
+
+                // Create month folder
+                string monthDirectory = Path.Combine(outputDirectory, currentMonth);
+                if (!Directory.Exists(monthDirectory))
+                {
+                    Directory.CreateDirectory(monthDirectory);
+                }
+
+                // Create day folder inside the month folder
+                string dayDirectory = Path.Combine(monthDirectory, currentDay);
+                if (!Directory.Exists(dayDirectory))
+                {
+                    Directory.CreateDirectory(dayDirectory);
+                }
+
+                // Set the full file path
+                string filePath = Path.Combine(dayDirectory, $"PC - {currentTime}.txt");
+
+                // Save the content into the file
+                File.WriteAllText(filePath, content);
+
+                Console.WriteLine($"File saved successfully to {filePath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error saving the file: {ex.Message}");
+            }
+        }
     }
 }
