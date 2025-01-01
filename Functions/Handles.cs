@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace System_Fetcher.Functions
@@ -58,8 +55,9 @@ namespace System_Fetcher.Functions
                     }
                     else
                     {
-                        // Successfully read and validated configuration
-                        // MessageBox.Show($"Handler: {configData["Handler"]}\nCompany: {configData["Company"]}\nAppVer: {configData["AppVer"]}","Configuration Loaded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Load the info at the user variable in global
+                        GlobalVariables.currentUser.Name = configData["Handler"];
+                        GlobalVariables.currentUser.Company = configData["Company"];
                     }
                 }
             }
@@ -81,8 +79,6 @@ namespace System_Fetcher.Functions
                                 "Unexpected Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
-
-
         }
 
         // Checker of the Ini FIle if it's empty or invalid
@@ -183,6 +179,4 @@ namespace System_Fetcher.Functions
 
         }
     }
-
-
 }

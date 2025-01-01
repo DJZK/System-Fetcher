@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Functions\GlobalVariables.cs" />
     <Compile Include="Functions\Handles.cs" />
+    <Compile Include="Functions\User.cs" />
     <Compile Include="Interfaces\Initialize.cs">
       <SubType>Form</SubType>
     </Compile>

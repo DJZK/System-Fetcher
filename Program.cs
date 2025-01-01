@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Management;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using System_Fetcher.Functions;
-using System.Threading;
 
 namespace System_Fetcher
 {
