@@ -33,7 +33,27 @@ namespace System_Fetcher.Functions
 
         private void MainActivity_Load(object sender, EventArgs e)
         {
+
+            // App Version. 
+            labelVerison.Text = Properties.Resources.appVersion;
+
+            // Timer and Time label
+            labelTime.Text = DateTime.Now + "";
+            ticker.Enabled = true;
+
+
             Fetchers.FetchSystem();
+        }
+
+        private void ticker_Tick(object sender, EventArgs e)
+        {
+            labelTime.Text = DateTime.Now + "";
+        }
+
+        private void buttonView_Click(object sender, EventArgs e)
+        {
+            Viewer vw = new Viewer();
+            vw.ShowDialog();
         }
     }
 }
