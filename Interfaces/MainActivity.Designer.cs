@@ -161,6 +161,7 @@
             // 
             // labelVerison
             // 
+            this.labelVerison.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.labelVerison.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelVerison.Location = new System.Drawing.Point(147, 279);
             this.labelVerison.Name = "labelVerison";
@@ -168,6 +169,7 @@
             this.labelVerison.TabIndex = 14;
             this.labelVerison.Text = "<version>";
             this.labelVerison.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelVerison.Click += new System.EventHandler(this.labelVerison_Click);
             // 
             // ticker
             // 

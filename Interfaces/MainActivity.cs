@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System_Fetcher.Interfaces;
 
@@ -33,7 +25,7 @@ namespace System_Fetcher.Functions
 
         private void MainActivity_Load(object sender, EventArgs e)
         {
-
+            Icon = Properties.Resources.favicon;
             // App Version. 
             labelVerison.Text = Properties.Resources.appVersion;
 
@@ -87,6 +79,12 @@ namespace System_Fetcher.Functions
             GlobalVariables.sysInfo.AT = textAT.Text;
             GlobalVariables.sysInfo.OWNER = textOwner.Text;
 
+        }
+
+        private void labelVerison_Click(object sender, EventArgs e)
+        {
+            About ab = new About();
+            ab.ShowDialog();
         }
     }
 }

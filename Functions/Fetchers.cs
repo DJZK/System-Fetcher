@@ -1,13 +1,9 @@
 ﻿
-using System;
-using System.Management;
-using System.Windows.Forms;
-using System_Fetcher.Functions;
-using System.Runtime.CompilerServices;
-using NetFwTypeLib;
 using Microsoft.Win32;
-using System.IO;
+using System;
 using System.Diagnostics;
+using System.Management;
+using System_Fetcher.Functions;
 
 namespace System_Fetcher.Interfaces
 {

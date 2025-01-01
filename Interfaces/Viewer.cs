@@ -20,6 +20,7 @@ namespace System_Fetcher.Interfaces
 
         private void Viewer_Load(object sender, EventArgs e)
         {
+            Icon = Properties.Resources.favicon;
             textInfo.Width = Width - 15;
             textInfo.Height = Height - 70;
            

@@ -35,7 +35,7 @@ namespace System_Fetcher.Functions
 
         private void Initialize_Load(object sender, EventArgs e)
         {
-
+            Icon = Properties.Resources.favicon;
         }
     }
 }
