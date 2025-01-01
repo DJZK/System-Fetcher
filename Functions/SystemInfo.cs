@@ -13,8 +13,6 @@ public class SystemInfo
     public string MOBO { get => mobo; set => mobo = value; }
     public string BIOS { get => bios; set => bios = value; }
     public string NET { get => net; set => net = value; }
-    public string WiFi { get => wifi; set => wifi = value; }
-    public string BLUETOOTH { get => bluetooth; set => bluetooth = value; }
     public string ID { get => id; set => id = value; }
     public string OS { get => os; set => os = value; }
     public string TI { get => ti; set => ti = value; }

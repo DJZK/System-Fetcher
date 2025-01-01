@@ -11,6 +11,8 @@ namespace System_Fetcher.Functions
 
         public static SystemInfo sysInfo = new SystemInfo();
 
+        public static string SystemInfo;
+
     }
 
 }

@@ -75,9 +75,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Functions\Cryptorizer.cs" />
     <Compile Include="Functions\GlobalVariables.cs" />
     <Compile Include="Functions\Handles.cs" />
-    <Compile Include="Functions\TimeDate.cs" />
     <Compile Include="Functions\User.cs" />
     <Compile Include="Interfaces\Initialize.cs">
       <SubType>Form</SubType>
