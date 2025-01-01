@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System_Fetcher.Interfaces;
 
 namespace System_Fetcher.Functions
 {
@@ -32,7 +33,7 @@ namespace System_Fetcher.Functions
 
         private void MainActivity_Load(object sender, EventArgs e)
         {
-
+            Fetchers.FetchSystem();
         }
     }
 }

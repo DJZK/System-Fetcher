@@ -9,6 +9,8 @@ namespace System_Fetcher.Functions
 
         public static User currentUser = new User();
 
+        public static SystemInfo sysInfo = new SystemInfo();
+
     }
 
 }
