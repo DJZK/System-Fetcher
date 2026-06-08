@@ -181,6 +181,11 @@ namespace System_Fetcher.Functions
 
         public static void SaveSystemInfo(string content)
         {
+            // First version uses output be like <Exec Location>\Output\Month\Day
+            // I find it a little bit useless since the output file would be unique anyway. So it doesn't make sense sorting
+            // it that way unless i am specifically tracking the per-day output of my performance. Anyhow, the old version
+            // of the approach is in the long ass comment down below.
+            /*
             try
             {
                 // Get the current date, month, and time
@@ -227,6 +232,48 @@ namespace System_Fetcher.Functions
             {
                 Console.WriteLine($"Error saving the file: {ex.Message}");
             }
+
+            */
+
+            
+            try
+            {
+                // Get the current timestamp
+                string currentTime = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+
+                // Get the path of the executable's directory
+                string executableDirectory = Path.GetDirectoryName(
+                    System.Reflection.Assembly.GetExecutingAssembly().Location);
+
+                // Set the base output directory inside the executable's directory
+                string outputDirectory = Path.Combine(executableDirectory, "Output");
+
+                // Create Output directory if it doesn't exist
+                if (!Directory.Exists(outputDirectory))
+                {
+                    Directory.CreateDirectory(outputDirectory);
+                }
+
+                // Set the full file path directly under Output
+                string filePath = Path.Combine(outputDirectory, $"PC - {currentTime}.txt");
+
+                // Save the content into the file
+                File.WriteAllText(filePath, content);
+
+                Console.WriteLine($"File saved successfully to {filePath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error saving the file: {ex.Message}");
+            }
+
+            /* 
+             * PS: I kinda regret not using this program when I managed to do 3 premium tier cleaning in a day
+             * and when I did 5 consecutive PC Build, all of which has their own GPU. All of which has polished OS and
+             * in plug-and-play state, all of the updates done, and all runtimes installed
+             * I set that as my Standard; a point of no complaint for others, it can be done
+             * I've done it, they could have. Since I know I can still exceed that record.
+            */
         }
     }
 }
