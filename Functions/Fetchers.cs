@@ -462,13 +462,14 @@ namespace System_Fetcher.Interfaces
         public static void BuildInfo()
         {
             GlobalVariables.SystemInfo =
-                $"Time: {DateTime.Now} \n\n" +
+                $"Time: {DateTime.Now} \n" +
+                $"Fetcher Version: {Properties.Resources.appVersion} \n\n" +
 
                 $"Personnel:\n\t" +
                 $"Handler: {GlobalVariables.currentUser.Name} \n\t" +
                 $"Company: {GlobalVariables.currentUser.Company} \n\n" +
 
-                $"Hardware:\n\t" +
+                $"Hardware: {GlobalVariables.sysInfo.MT} \n\t" +
                 $"CPU: {GlobalVariables.sysInfo.CPU}\n\t" +
                 $"GPU: {GlobalVariables.sysInfo.GPU}\n\t" +
                 $"RAM: {GlobalVariables.sysInfo.RAM} \n\t" +
@@ -492,8 +493,9 @@ namespace System_Fetcher.Interfaces
                 $"DOTNET: {GlobalVariables.sysInfo.DOTNET} \n\n" +
 
                 $"Action Taken:\n\t" +
-                $"AT: {GlobalVariables.sysInfo.AT} \n\t" +
-                $"Owner: {GlobalVariables.sysInfo.OWNER}";
+                $"ST: {GlobalVariables.sysInfo.ST} \n\t" +
+                $"WT: {GlobalVariables.sysInfo.WORKINGTECH} \n\t" +
+                $"AT: {GlobalVariables.sysInfo.AT}";
 
             // MessageBox.Show(GlobalVariables.SystemInfo, "System Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             // Console.WriteLine(GlobalVariables.SystemInfo);

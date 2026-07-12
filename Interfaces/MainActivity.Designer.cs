@@ -39,12 +39,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textAT = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textOwner = new System.Windows.Forms.TextBox();
+            this.textWorkingTechnician = new System.Windows.Forms.TextBox();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonView = new System.Windows.Forms.Button();
             this.labelVerison = new System.Windows.Forms.Label();
             this.ticker = new System.Windows.Forms.Timer(this.components);
             this.labelTime = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboServiceType = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboMachineType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -59,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(79, 48);
+            this.label2.Location = new System.Drawing.Point(86, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 1;
@@ -68,7 +72,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 74);
+            this.label3.Location = new System.Drawing.Point(53, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 2;
@@ -77,7 +81,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 100);
+            this.label4.Location = new System.Drawing.Point(19, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 13);
             this.label4.TabIndex = 3;
@@ -85,21 +89,21 @@
             // 
             // textPSU
             // 
-            this.textPSU.Location = new System.Drawing.Point(117, 45);
+            this.textPSU.Location = new System.Drawing.Point(124, 74);
             this.textPSU.Name = "textPSU";
             this.textPSU.Size = new System.Drawing.Size(157, 20);
             this.textPSU.TabIndex = 4;
             // 
             // textCPU
             // 
-            this.textCPU.Location = new System.Drawing.Point(117, 71);
+            this.textCPU.Location = new System.Drawing.Point(124, 100);
             this.textCPU.Name = "textCPU";
             this.textCPU.Size = new System.Drawing.Size(157, 20);
             this.textCPU.TabIndex = 5;
             // 
             // textChassy
             // 
-            this.textChassy.Location = new System.Drawing.Point(117, 97);
+            this.textChassy.Location = new System.Drawing.Point(124, 126);
             this.textChassy.Name = "textChassy";
             this.textChassy.Size = new System.Drawing.Size(157, 20);
             this.textChassy.TabIndex = 6;
@@ -108,40 +112,40 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(32, 135);
+            this.label5.Location = new System.Drawing.Point(80, 190);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 13);
+            this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Actions Taken:";
+            this.label5.Text = "Notes:";
             // 
             // textAT
             // 
-            this.textAT.Location = new System.Drawing.Point(117, 132);
+            this.textAT.Location = new System.Drawing.Point(124, 187);
             this.textAT.Multiline = true;
             this.textAT.Name = "textAT";
-            this.textAT.Size = new System.Drawing.Size(157, 45);
+            this.textAT.Size = new System.Drawing.Size(157, 38);
             this.textAT.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(70, 193);
+            this.label6.Location = new System.Drawing.Point(12, 234);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.Size = new System.Drawing.Size(106, 13);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Owner:";
+            this.label6.Text = "Working Technician:";
             // 
-            // textOwner
+            // textWorkingTechnician
             // 
-            this.textOwner.Location = new System.Drawing.Point(117, 190);
-            this.textOwner.Name = "textOwner";
-            this.textOwner.Size = new System.Drawing.Size(157, 20);
-            this.textOwner.TabIndex = 11;
+            this.textWorkingTechnician.Location = new System.Drawing.Point(124, 231);
+            this.textWorkingTechnician.Name = "textWorkingTechnician";
+            this.textWorkingTechnician.Size = new System.Drawing.Size(157, 20);
+            this.textWorkingTechnician.TabIndex = 11;
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(159, 236);
+            this.buttonSave.Location = new System.Drawing.Point(165, 274);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 12;
@@ -151,7 +155,7 @@
             // 
             // buttonView
             // 
-            this.buttonView.Location = new System.Drawing.Point(49, 236);
+            this.buttonView.Location = new System.Drawing.Point(64, 274);
             this.buttonView.Name = "buttonView";
             this.buttonView.Size = new System.Drawing.Size(75, 23);
             this.buttonView.TabIndex = 13;
@@ -163,7 +167,7 @@
             // 
             this.labelVerison.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.labelVerison.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.labelVerison.Location = new System.Drawing.Point(147, 279);
+            this.labelVerison.Location = new System.Drawing.Point(161, 304);
             this.labelVerison.Name = "labelVerison";
             this.labelVerison.Size = new System.Drawing.Size(127, 20);
             this.labelVerison.TabIndex = 14;
@@ -178,24 +182,90 @@
             // 
             // labelTime
             // 
-            this.labelTime.Location = new System.Drawing.Point(12, 279);
+            this.labelTime.Location = new System.Drawing.Point(12, 304);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(129, 23);
             this.labelTime.TabIndex = 15;
             this.labelTime.Text = "<time>";
             this.labelTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(45, 160);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Service Type:";
+            // 
+            // comboServiceType
+            // 
+            this.comboServiceType.AutoCompleteCustomSource.AddRange(new string[] {
+            "Build",
+            "Upgrade",
+            "Repair",
+            "Service / Maintenance"});
+            this.comboServiceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboServiceType.FormattingEnabled = true;
+            this.comboServiceType.ItemHeight = 13;
+            this.comboServiceType.Items.AddRange(new object[] {
+            "BUILD",
+            "SERVICE"});
+            this.comboServiceType.Location = new System.Drawing.Point(124, 157);
+            this.comboServiceType.MaxDropDownItems = 4;
+            this.comboServiceType.Name = "comboServiceType";
+            this.comboServiceType.Size = new System.Drawing.Size(157, 21);
+            this.comboServiceType.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(40, 50);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 13);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Machine Type:";
+            // 
+            // comboMachineType
+            // 
+            this.comboMachineType.AutoCompleteCustomSource.AddRange(new string[] {
+            "Build",
+            "Upgrade",
+            "Repair",
+            "Service / Maintenance"});
+            this.comboMachineType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboMachineType.FormattingEnabled = true;
+            this.comboMachineType.ItemHeight = 13;
+            this.comboMachineType.Items.AddRange(new object[] {
+            "DESKTOP",
+            "LAPTOP",
+            "MINIPC",
+            "OEM",
+            "MICRO",
+            "OTHER"});
+            this.comboMachineType.Location = new System.Drawing.Point(124, 47);
+            this.comboMachineType.MaxDropDownItems = 4;
+            this.comboMachineType.Name = "comboMachineType";
+            this.comboMachineType.Size = new System.Drawing.Size(157, 21);
+            this.comboMachineType.TabIndex = 19;
+            this.comboMachineType.SelectedIndexChanged += new System.EventHandler(this.comboMachineType_SelectedIndexChanged);
+            // 
             // MainActivity
             // 
             this.AcceptButton = this.buttonSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(286, 308);
+            this.ClientSize = new System.Drawing.Size(300, 337);
+            this.Controls.Add(this.comboMachineType);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.comboServiceType);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.labelVerison);
             this.Controls.Add(this.buttonView);
             this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.textOwner);
+            this.Controls.Add(this.textWorkingTechnician);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textAT);
             this.Controls.Add(this.label5);
@@ -230,11 +300,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textAT;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textOwner;
+        private System.Windows.Forms.TextBox textWorkingTechnician;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonView;
         private System.Windows.Forms.Label labelVerison;
         private System.Windows.Forms.Timer ticker;
         private System.Windows.Forms.Label labelTime;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboServiceType;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboMachineType;
     }
 }

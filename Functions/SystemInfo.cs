@@ -1,7 +1,7 @@
 public class SystemInfo
 {
     private string cpu, gpu, ram, ssd, psu, fan, mobo, 
-        bios, net, id, os, ti, un, uac, java, python, dotnet, at, owner, dx, chassis;
+        bios, net, id, os, ti, un, uac, java, python, dotnet, at, workingtech, dx, chassis, st, mt;
 
     public string CPU { get => cpu; set => cpu = value; }
     public string GPU { get => gpu; set => gpu = value; }
@@ -21,7 +21,9 @@ public class SystemInfo
     public string PYTHON { get => python; set => python = value; }
     public string DOTNET { get => dotnet; set => dotnet = value; }
     public string AT { get => at; set => at = value; }
-    public string OWNER { get => owner; set => owner = value; }
+    public string WORKINGTECH { get => workingtech; set => workingtech = value; }
     public string DX { get => dx; set => dx = value; }
     public string CHASSIS { get => chassis; set => chassis = value; }
+    public string ST { get => st; set => st = value; }
+    public string MT { get => mt; set => mt = value; }
 }

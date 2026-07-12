@@ -33,6 +33,11 @@ namespace System_Fetcher.Functions
             labelTime.Text = DateTime.Now + "";
             ticker.Enabled = true;
 
+            // Automatically Loads 1 on Service Type DropDown
+            comboServiceType.SelectedIndex = 0;
+
+            // Automatically Loads 1 on Machine Type DropDown
+            comboMachineType.SelectedIndex = 0;
 
             Fetchers.FetchSystem();
         }
@@ -77,7 +82,9 @@ namespace System_Fetcher.Functions
             GlobalVariables.sysInfo.FAN = textCPU.Text;
             GlobalVariables.sysInfo.CHASSIS = textChassy.Text;
             GlobalVariables.sysInfo.AT = textAT.Text;
-            GlobalVariables.sysInfo.OWNER = textOwner.Text;
+            GlobalVariables.sysInfo.WORKINGTECH = textWorkingTechnician.Text;
+            GlobalVariables.sysInfo.ST = comboServiceType.Text;
+            GlobalVariables.sysInfo.MT = comboMachineType.Text;
 
         }
 
@@ -85,6 +92,74 @@ namespace System_Fetcher.Functions
         {
             About ab = new About();
             ab.ShowDialog();
+        }
+
+        private void comboMachineType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboMachineType.SelectedIndex)
+            {
+                case 0: // DESKTOP
+                    textPSU.Enabled = true;
+                    textPSU.Text = "";
+                    textCPU.Enabled = true;
+                    textCPU.Text = "";
+                    textChassy.Enabled = true;
+                    textChassy.Text = "";
+                    comboServiceType.Enabled = true;
+                    break;
+
+                case 1: // LAPTOP
+                    textPSU.Enabled = false;
+                    textPSU.Text = "AC ADAPTER";
+                    textCPU.Enabled = false;
+                    textCPU.Text = "N/A";
+                    textChassy.Enabled = true;
+                    comboServiceType.Enabled = false;
+                    comboServiceType.SelectedIndex = 1;
+                    break;
+
+                case 2: // MINIPC
+                    textPSU.Enabled = false;
+                    textPSU.Text = "AC ADAPTER";
+                    textCPU.Enabled = false;
+                    textCPU.Text = "N/A";
+                    textChassy.Enabled = true;
+                    comboServiceType.Enabled = false;
+                    comboServiceType.SelectedIndex = 1;
+                    break;
+
+                case 3: // OEM
+                    textPSU.Enabled = true;
+                    textPSU.Text = "OEM";
+                    textCPU.Enabled = true;
+                    textCPU.Text = "OEM";
+                    textChassy.Enabled = true; 
+                    comboServiceType.Enabled = false;
+                    comboServiceType.SelectedIndex = 1;
+                    break;
+
+                case 4: // MICRO
+                    textPSU.Enabled = false;
+                    textPSU.Text = "N/A";
+                    textCPU.Enabled = false;
+                    textCPU.Text = "N/A";
+                    textChassy.Enabled = true;
+                    comboServiceType.Enabled = false;
+                    comboServiceType.SelectedIndex = 1;
+                    break;
+
+                case 5: // OTHER
+                    textPSU.Enabled = true;
+                    textPSU.Text = "";
+                    textCPU.Enabled = true;
+                    textCPU.Text = "";
+                    textChassy.Enabled = true;
+                    comboServiceType.Enabled = true;
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }

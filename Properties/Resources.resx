@@ -118,9 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="appVersion" xml:space="preserve">
-    <value>v2026.06.08</value>
+    <value>v2026.07.12</value>
     <comment>- 2025-01-02 Inabot na ng 12 am -,-
-- 2026-06-08  Nakaisip ng mas maayos na output. 2024 pala nailagay ko sa last release? Sabagay January 2 kasi hahaha</comment>
+- 2026-06-08  Nakaisip ng mas maayos na output. 2024 pala nailagay ko sa last release? Sabagay January 2 kasi hahaha
+- 2026-07-12 Naglagay na ng Working Technician at Service Type. Just in case na centralized ang executable at multiple ang users</comment>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="favicon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

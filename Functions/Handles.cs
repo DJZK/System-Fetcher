@@ -245,6 +245,9 @@ namespace System_Fetcher.Functions
                 string executableDirectory = Path.GetDirectoryName(
                     System.Reflection.Assembly.GetExecutingAssembly().Location);
 
+                // The Path of Supposed STRX folder
+                string strxLogsPath = @"C:\Program Files\Common Files\STRX\Logs";
+
                 // Set the base output directory inside the executable's directory
                 string outputDirectory = Path.Combine(executableDirectory, "Output");
 
@@ -254,11 +257,20 @@ namespace System_Fetcher.Functions
                     Directory.CreateDirectory(outputDirectory);
                 }
 
+                if (!Directory.Exists(strxLogsPath))
+                {
+                    Directory.CreateDirectory(strxLogsPath);
+                }
+
+
                 // Set the full file path directly under Output
-                string filePath = Path.Combine(outputDirectory, $"PC - {currentTime}.txt");
+                string filePath = Path.Combine(outputDirectory, $"{GlobalVariables.sysInfo.WORKINGTECH}.{GlobalVariables.sysInfo.ST} - {GlobalVariables.sysInfo.MT}-{currentTime}.txt");
+                string strxLogPath = Path.Combine(strxLogsPath, $"{GlobalVariables.sysInfo.WORKINGTECH}.{GlobalVariables.sysInfo.ST} - {GlobalVariables.sysInfo.MT}-{currentTime}.txt");
+
 
                 // Save the content into the file
                 File.WriteAllText(filePath, content);
+                File.WriteAllText(strxLogPath, content);
 
                 Console.WriteLine($"File saved successfully to {filePath}");
             }
