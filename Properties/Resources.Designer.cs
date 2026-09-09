@@ -71,7 +71,7 @@ namespace System_Fetcher.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to v2026.07.12.
+        ///   Looks up a localized string similar to v2026.09.09.
         /// </summary>
         internal static string appVersion {
             get {

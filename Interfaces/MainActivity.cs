@@ -67,13 +67,20 @@ namespace System_Fetcher.Functions
             // Builds it to the system info
             Fetchers.BuildInfo();
 
-            Handles.SaveSystemInfo(GlobalVariables.SystemInfo);
+            // Confirm Before Saving the stupid shit
+            Confirmator cf = new Confirmator();
+            if (!(cf.ShowDialog() == DialogResult.OK))
+            {
+                return; 
+            }
 
+            // Finally
+            Handles.SaveSystemInfo(GlobalVariables.SystemInfo);
             if (MessageBox.Show("Success", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
             {
                 Application.Exit();
-                Environment.Exit(0);
             }
+
         }
 
         private void LockandLoad()

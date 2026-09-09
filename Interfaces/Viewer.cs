@@ -30,7 +30,7 @@ namespace System_Fetcher.Interfaces
         private void Viewer_SizeChanged(object sender, EventArgs e)
         {
             textInfo.Width = Width - 15;
-            textInfo.Height = Height - 70;
+            textInfo.Height = Height - 100;
         }
     }
 }
