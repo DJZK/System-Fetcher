@@ -67,6 +67,14 @@ namespace System_Fetcher.Functions
             // Builds it to the system info
             Fetchers.BuildInfo();
 
+            // Confirm if fields are empty
+            if (checkEmptyFields())
+            {
+                MessageBox.Show("Please fill in all required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the method if there are empty fields
+            }
+
+
             // Confirm Before Saving the stupid shit
             Confirmator cf = new Confirmator();
             if (!(cf.ShowDialog() == DialogResult.OK))
@@ -74,6 +82,7 @@ namespace System_Fetcher.Functions
                 return; 
             }
 
+          
             // Finally
             Handles.SaveSystemInfo(GlobalVariables.SystemInfo);
             if (MessageBox.Show("Success", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
@@ -93,6 +102,19 @@ namespace System_Fetcher.Functions
             GlobalVariables.sysInfo.ST = comboServiceType.Text;
             GlobalVariables.sysInfo.MT = comboMachineType.Text;
 
+        }
+
+        public Boolean checkEmptyFields()
+        {
+            if (string.IsNullOrWhiteSpace(textPSU.Text) ||
+                string.IsNullOrWhiteSpace(textCPU.Text) ||
+                string.IsNullOrWhiteSpace(textChassy.Text) ||
+                string.IsNullOrWhiteSpace(textAT.Text) ||
+                string.IsNullOrWhiteSpace(textWorkingTechnician.Text))
+            {
+                return true; // There are empty fields
+            }
+            return false; // All fields are filled
         }
 
         private void labelVerison_Click(object sender, EventArgs e)
